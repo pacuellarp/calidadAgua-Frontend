@@ -86,13 +86,7 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/discovery" component={Discovery} />
-        <Route path="/map" component={Map} />
-        <Route path="/signup" component={RegisterPage} />
-        //<Route path="/login" component={LoginPage} />
-        <Route path="/about" component={AboutUsPage} />
-        <Route path="/login" component={()=><LoginPage/>} />
+        <Route exact path="/" component={Discovery} />
       </Switch>
     </Router>
   );

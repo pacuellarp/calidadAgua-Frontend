@@ -42,10 +42,6 @@ function ContextTable() {
               <th scope="col">PH</th>
               <th scope="col">Temperatura</th>
               <th scope="col">Conductividad</th>
-              <th scope="col">Latitud</th>
-              <th scope="col">Longitud</th>
-              <th scope="col">Editar</th>
-              <th scope="col">Eliminar</th>
             </tr>
             </thead>
         {dataResources?.map((fuente) => {
@@ -58,9 +54,6 @@ function ContextTable() {
               <td>{fuente.valoracion.pH[fuente.valoracion.pH.length-1]}</td>
               <td>{fuente.valoracion.temperature[fuente.valoracion.temperature.length-1]}</td>
               <td>{fuente.valoracion.conductivity[fuente.valoracion.conductivity.length-1]}</td>
-              <td>{fuente.coordenadas.latitud}</td>
-              <td>{fuente.coordenadas.longitud}</td>
-
             </tr>
             </tbody>
             

@@ -1,0 +1,8 @@
+.mapa{
+    background-image: url('../../assets/darkmap2.jpeg');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 855px;
+    height: 500px;
+}

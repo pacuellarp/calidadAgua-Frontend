@@ -1,0 +1,111 @@
+.uneteContent {
+  margin: 50px 60px 0;
+  background-color: #0b597d17;
+  padding: 50px 100px;
+  border-radius: 25px;
+}
+
+.infoPills {
+  display: flex;
+  flex-direction: row;
+  margin: 0px 2rem;
+  padding: 1.2rem 0px;
+  text-align: center;
+  color: #747474;
+}
+
+.infoPills h2 {
+  color: #212121;
+  font-size: 2rem;
+}
+
+.subInfoPills {
+  width: auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+.subtitleInfoPills {
+  color: #212121;
+  font-size: 22px;
+}
+
+.infoPill {
+  line-height: 1.5rem;
+}
+
+#uneteTitle {
+  text-align: center;
+  font-size: 2rem;
+  line-height: 2.4rem;
+  color: #0B597D;
+}
+#uneteSubTitle {
+  text-align: center;
+  line-height: 40px;
+  font-size: 20px;
+  color: #747474;;
+}
+
+#uneteText {
+  line-height: 34px;
+  margin-bottom: 30px;
+  font-size: 19px;
+}
+
+.uneteButtons {
+  display: flex;
+  justify-content: center;
+  gap: 120px;
+}
+
+.subUneteContent input[type="text"]{
+  background-color: #0b597d17;
+}
+
+@media only screen and (min-device-width: 40rem) {
+
+  .uneteContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 3rem 0 6rem;
+  }
+
+  #uneteTitle {
+    text-align: center;
+    font-size: 2rem;
+    line-height: 2.4rem;
+    color: #0B597D;
+  }
+
+  #uneteSubTitle {
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+    color: #747474;;
+  }
+
+
+  .uneteButtons {
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .subUneteContent {
+    display: flex;
+    justify-content: space-around;    
+    flex-direction: row;
+  }
+
+  #email{
+    height: 2rem;
+    width: 22rem;
+    margin-right: 2rem;
+  }
+
+}

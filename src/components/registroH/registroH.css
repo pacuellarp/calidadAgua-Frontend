@@ -1,0 +1,32 @@
+.registroH {
+    width: 100%;
+    background-color: #fff;
+    color: #747474;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 3rem 0 2rem;
+    justify-content: space-evenly;
+  }
+  
+  .registroH h2 {
+    font-size: 2rem;
+    line-height: 2.4rem;
+    color: #068C94;
+  }
+  
+  
+  .registroHText {
+    padding: 0 2rem 1rem 2rem;
+    line-height: 1.5rem;
+  }
+
+  .registroHText p{
+    text-align: justify;
+  }
+  
+  .registroHButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }

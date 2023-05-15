@@ -1,0 +1,32 @@
+.visualizacion {
+    width: 100%;
+    background-color: #fff;
+    color: #747474;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 3rem 0 2rem;
+    justify-content: space-evenly;
+  }
+  
+  .visualizacion h2 {
+    font-size: 2rem;
+    line-height: 2.4rem;
+    color: #068C94;
+  }
+  
+  
+  .visualizacionText {
+    padding: 0 2rem 1rem 2rem;
+    line-height: 1.5rem;
+  }
+
+  .visualizacionText p{
+    text-align: justify;
+  }
+  
+  .visualizacionButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }

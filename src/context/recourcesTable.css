@@ -1,0 +1,32 @@
+table{
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+table thead tr{
+    background-color: #0B597D;
+    color: #ffffff;
+}
+
+table tr, table th, table tr td{
+    text-align: center;
+    padding: 12px 15px;
+}
+
+table tbody tr td {
+    border-bottom: thin solid #dddddd;
+
+}
+
+table tbody tr td:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.containerRecourcesTable{
+    display: flex;
+    justify-content: center;
+}

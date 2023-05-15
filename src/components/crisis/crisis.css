@@ -1,0 +1,86 @@
+.crisisContent {
+  margin: 50px 60px 0;
+  background-color: #0b597d17;
+  padding: 50px 100px;
+  border-radius: 25px;
+}
+
+.infoPills {
+  display: flex;
+  flex-direction: row;
+  margin: 0px 2rem;
+  padding: 1.2rem 0px;
+  text-align: center;
+  color: #747474;
+}
+
+.infoPills h2 {
+  color: #212121;
+  font-size: 2rem;
+}
+
+.subInfoPills {
+  width: auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+.subtitleInfoPills {
+  color: #212121;
+  font-size: 22px;
+}
+
+.infoPill {
+  margin: 10px 20px;
+  text-align: justify;
+}
+
+#crisisTitle {
+  text-align: center;
+  line-height: 70px;
+  font-size: 40px;
+  color: #068C94;
+}
+#crisisSubTitle {
+  text-align: center;
+  line-height: 40px;
+  font-size: 20px;
+  color: #0B597D;
+}
+
+#crisisText {
+  line-height: 34px;
+  margin-bottom: 30px;
+  font-size: 19px;
+}
+
+.crisisButtons {
+  display: flex;
+  justify-content: center;
+  gap: 120px;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 765px) {
+  .crisisContent {
+    padding: 50px 20px;
+  }
+
+  .crisisButtons {
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .subInfoPills {
+    display: flex;
+    justify-content: space-around;    
+    flex-direction: row; 
+  }
+
+  .infoPill {
+    margin: 10px 20px;
+    text-align: left;
+  }
+}

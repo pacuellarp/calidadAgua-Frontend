@@ -1,0 +1,17 @@
+.titleMap{
+    text-align: center;
+    line-height: 70px;
+    font-size: 35px;
+    color: #0B597D;
+}
+
+.mainMap{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.infoMap{
+    width: 30rem;
+}

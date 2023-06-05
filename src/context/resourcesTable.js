@@ -49,7 +49,7 @@ function ContextTable() {
             
             <tbody>
             <tr class>
-              <td>{fuente.date}</td>
+              <td>{fuente.date[fuente.date.length-1]}</td>
               <td>{fuente.name}</td>
               <td>{fuente.valoracion.pH[fuente.valoracion.pH.length-1]}</td>
               <td>{fuente.valoracion.temperature[fuente.valoracion.temperature.length-1]}</td>

@@ -15,7 +15,36 @@ function ContextTable() {
     dataResources = useSelector(state => state.tables.table)
   }*/
   setInterval(() => {
-    window.location.reload()}, 10000);
+    window.location.reload()}, 420000);
+
+  var ph = []
+  dataResources?.map((fuente) => {
+      for (const element of fuente.valoracion.pH){
+          ph.push(element)
+      }
+      });
+  var temper = []
+  dataResources?.map((fuente) => {
+      for (const element of fuente.valoracion.temperature){
+        temper.push(element)
+      }
+      });
+  var conduct = []
+  dataResources?.map((fuente) => {
+      for (const element of fuente.valoracion.conductivity){
+        conduct.push(element)
+      }
+      });
+  var hora = []
+  dataResources?.map((fuente) => {
+      for (const element of fuente.date){
+          hora.push(element)
+      }
+    });
+  var nombre
+  dataResources?.map((fuente) => {
+    nombre = fuente.name
+  });
  /* let resources;
   resources = dataResources; */
 
@@ -34,7 +63,7 @@ function ContextTable() {
   //console.log(resources);
   return (
       <div class="containerRecourcesTable">
-        <table class="table table-dark table-hover table-bordered">
+        <table>
             <thead>
             <tr>
               <th scope="col">Fecha</th>
@@ -44,16 +73,16 @@ function ContextTable() {
               <th scope="col">Conductividad</th>
             </tr>
             </thead>
-        {dataResources?.map((fuente) => {
+        {hora?.map(function(value, index) {
           return (
             
             <tbody>
             <tr class>
-              <td>{fuente.date[fuente.date.length-1]}</td>
-              <td>{fuente.name}</td>
-              <td>{fuente.valoracion.pH[fuente.valoracion.pH.length-1]}</td>
-              <td>{fuente.valoracion.temperature[fuente.valoracion.temperature.length-1]}</td>
-              <td>{fuente.valoracion.conductivity[fuente.valoracion.conductivity.length-1]}</td>
+              <td>{value}</td>
+              <td>{nombre}</td>
+              <td>{ph[index]}</td>
+              <td>{temper[index]}</td>
+              <td>{conduct[index]}</td>
             </tr>
             </tbody>
             

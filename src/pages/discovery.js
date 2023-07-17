@@ -13,7 +13,6 @@ function Discovery() {
   return (
     <>
       <Header />
-      <ContextTable />
       <div>
           <br></br>
           <br></br>
@@ -39,6 +38,11 @@ function Discovery() {
       </div>
       <div>
           <br></br>
+          <br></br>
+          <br></br>
+      </div>
+      <ContextTable />
+      <div>
           <br></br>
           <br></br>
       </div>

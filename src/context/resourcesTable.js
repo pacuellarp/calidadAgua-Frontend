@@ -45,6 +45,12 @@ function ContextTable() {
   dataResources?.map((fuente) => {
     nombre = fuente.name
   });
+  var nivel = []
+  dataResources?.map((fuente) => {
+      for (const element of fuente.valoracion.depth){
+        nivel.push(element)
+      }
+      });
  /* let resources;
   resources = dataResources; */
 
@@ -71,6 +77,7 @@ function ContextTable() {
               <th scope="col">PH</th>
               <th scope="col">Temperatura</th>
               <th scope="col">Conductividad</th>
+              <th scope="col">Nivel</th>
             </tr>
             </thead>
         {hora?.map(function(value, index) {
@@ -83,6 +90,7 @@ function ContextTable() {
               <td>{ph[index]}</td>
               <td>{temper[index]}</td>
               <td>{conduct[index]}</td>
+              <td>{nivel[index]}</td>
             </tr>
             </tbody>
             

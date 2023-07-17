@@ -37,7 +37,7 @@ function NavbarDesktop() {
   return (
     <>
       <header className="header">
-        <h2>Proyecto Calidad del Agua</h2>
+        <h2>SMART SENSOR</h2>
         <ul className="nav" id="nav">
           <li className="nav-item">
             <Link className="nav-link bold" to="/">

@@ -17,13 +17,6 @@ function ContextTable() {
   setInterval(() => {
     window.location.reload()}, 420000);
 
-  // Función para ordenar los datos por fecha de forma descendente
-  const sortByDateDesc = (data) => {
-    return data.slice().sort((a, b) => compareDesc(parseISO(a.date), parseISO(b.date)));
-  };
-
-  // Ordenar los datos por fecha de forma descendente
-  const sortedDataResources = sortByDateDesc(dataResources);
 
   var ph = []
   dataResources?.map((fuente) => {
@@ -76,29 +69,31 @@ function ContextTable() {
 
   //console.log(resources);
   return (
-      <div class="containerRecourcesTable">
-        <table>
-          <thead>
-            <tr>
-              <th scope="col">Fecha</th>
-              <th scope="col">Nombre Fuente</th>
-              <th scope="col">PH</th>
-              <th scope="col">Temperatura</th>
-              <th scope="col">Conductividad</th>
-              <th scope="col">Nivel</th>
-            </tr>
-          </thead>
+    <div className="containerRecourcesTable">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Fecha</th>
+            <th scope="col">Nombre Fuente</th>
+            <th scope="col">PH</th>
+            <th scope="col">Temperatura</th>
+            <th scope="col">Conductividad</th>
+            <th scope="col">Nivel</th>
+          </tr>
+        </thead>
         <tbody>
-          {sortedDataResources.map((fuente, index) => (
-            <tr key={index}>
-              <td>{fuente.date}</td>
-              <td>{fuente.name}</td>
-              <td>{fuente.valoracion.pH}</td>
-              <td>{fuente.valoracion.temperature}</td>
-              <td>{fuente.valoracion.conductivity}</td>
-              <td>{fuente.valoracion.depth}</td>
-            </tr>
-          ))}
+          {hora
+            ?.map((value, index) => (
+              <tr key={index}>
+                <td>{value}</td>
+                <td>{nombre}</td>
+                <td>{ph[index]}</td>
+                <td>{temper[index]}</td>
+                <td>{conduct[index]}</td>
+                <td>{nivel[index]}</td>
+              </tr>
+            ))
+            .reverse()}
         </tbody>
       </table>
     </div>

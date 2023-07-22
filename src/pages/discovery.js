@@ -13,48 +13,50 @@ import { blue } from '@mui/material/colors';
 function Discovery() {
   return (
     <>
-      <Header />
-      <div>
-          <br></br>
-          <br></br>
-      </div>
-      <div className="bg-light mx-auto px-2 border border-2 border-primary" style={{width:"750px", height:"390px"}}>
-          <LineChartPH />
-      </div>
-      <div>
-          <br></br>
-          <br></br>
-          <br></br>
-      </div>
-      <div className="bg-light mx-auto px-2 border border-2 border-primary" style={{width:"750px", height:"390px"}}>
-          <LineChartTemper />
-      </div>
-      <div>
-          <br></br>
-          <br></br>
-          <br></br>
-      </div>
-      <div className="bg-light mx-auto px-2 border border-2 border-primary" style={{width:"750px", height:"390px"}}>
-          <LineChartConduct />
-      </div>
-      <div>
-          <br></br>
-          <br></br>
-          <br></br>
-      </div>
-      <div className="bg-light mx-auto px-2 border border-2 border-primary" style={{width:"750px", height:"390px"}}>
-          <LineChartLevel />
-      </div>
-      <div>
-          <br></br>
-          <br></br>
-          <br></br>
-      </div>
-      <ContextTable />
-      <div>
-          <br></br>
-          <br></br>
-      </div>
+        <div className="discovery">
+            <Header />
+            <div>
+                <br></br>
+                <br></br>
+            </div>
+            <div id="graphic" className="bg-light mx-auto px-2 border border-2 border-primary" >
+                <LineChartPH />
+            </div>
+            <div>
+                <br></br>
+                <br></br>
+                <br></br>
+            </div>
+            <div id="graphic" className="bg-light mx-auto px-2 border border-2 border-primary" >
+                <LineChartTemper />
+            </div>
+            <div>
+                <br></br>
+                <br></br>
+                <br></br>
+            </div>
+            <div id="graphic" className="bg-light mx-auto px-2 border border-2 border-primary" >
+                <LineChartConduct />
+            </div>
+            <div>
+                <br></br>
+                <br></br>
+                <br></br>
+            </div>
+            <div id="graphic" className="bg-light mx-auto px-2 border border-2 border-primary" >
+                <LineChartLevel />
+            </div>
+            <div>
+                <br></br>
+                <br></br>
+                <br></br>
+            </div>
+            <ContextTable />
+            <div>
+                <br></br>
+                <br></br>
+            </div>
+        </div>
     </>
   );
 }

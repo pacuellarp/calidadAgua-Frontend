@@ -4,6 +4,7 @@ import ContextTable from '../context/resourcesTable';
 import LineChartPH from '../context/lineChartPH';
 import LineChartTemper from '../context/lineChartTemper';
 import LineChartConduct from '../context/lineChartConduct';
+import LineChartLevel from '../context/lineChartLevel';
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle";
@@ -35,6 +36,14 @@ function Discovery() {
       </div>
       <div className="bg-light mx-auto px-2 border border-2 border-primary" style={{width:"750px", height:"390px"}}>
           <LineChartConduct />
+      </div>
+      <div>
+          <br></br>
+          <br></br>
+          <br></br>
+      </div>
+      <div className="bg-light mx-auto px-2 border border-2 border-primary" style={{width:"750px", height:"390px"}}>
+          <LineChartLevel />
       </div>
       <div>
           <br></br>

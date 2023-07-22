@@ -49,10 +49,10 @@ export default function LinesChart() {
     setInterval(() => {
         window.location.reload()}, 420000);
 
-    var conduct = []
+    var level = []
     dataResources?.map((fuente) => {
-        for (const element of fuente.valoracion.conductivity){
-            conduct.push(element)
+        for (const element of fuente.valoracion.depth){
+            level.push(element)
         }
         });
     var dias = []
@@ -66,15 +66,15 @@ export default function LinesChart() {
         labels: dias,
         datasets: [ // Cada una de las líneas del gráfico
             {
-                label: 'conductivity',
-                data: conduct,
+                label: 'water level',
+                data: level,
                 tension: 0.5,
                 fill : true,
-                borderColor: 'rgb(232, 232, 12)',
-                backgroundColor: 'rgba(232, 232, 12, 0.5)',
+                borderColor: 'rgb(100, 99, 232)',
+                backgroundColor: 'rgba(100, 99, 232, 0.5)',
                 pointRadius: 5,
-                pointBorderColor: 'rgba(232, 232, 12)',
-                pointBackgroundColor: 'rgba(232, 232, 12)',
+                pointBorderColor: 'rgba(100, 99, 232)',
+                pointBackgroundColor: 'rgba(100, 99, 232)',
             },
         ],
     };

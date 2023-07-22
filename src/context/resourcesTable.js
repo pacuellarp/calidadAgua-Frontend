@@ -82,6 +82,9 @@ function ContextTable() {
           buttonText="Descarga la tabla para Excel"
         />
       </div>
+      <div>
+          <br></br>
+      </div>
       <table id="table-to-xls">
         <thead>
           <tr>

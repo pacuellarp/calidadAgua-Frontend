@@ -9,11 +9,12 @@ import LineChartLevel from '../context/lineChartLevel';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle";
 import { blue } from '@mui/material/colors';
+import "./discovery.css";
 
 function Discovery() {
   return (
     <>
-        <div className="discovery">
+        <div id="discovery">
             <Header />
             <div>
                 <br></br>

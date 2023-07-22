@@ -28,5 +28,22 @@ table tbody tr td:nth-of-type(even) {
 
 .containerRecourcesTable{
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+}
+
+.excel-download-btn {
+    background-color: #008000; /* Color verde característico de Excel */
+    color: #ffffff; /* Texto en blanco */
+    border: none; /* Sin borde */
+    padding: 10px 20px; /* Espaciado interior */
+    font-size: 16px; /* Tamaño de fuente */
+    cursor: pointer; /* Cambiar cursor al pasar por encima del botón */
+    border-radius: 5px; /* Bordes redondeados */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra para dar un efecto elevado */
+}
+  
+.excel-download-btn:hover {
+background-color: #006400; /* Color verde oscuro al pasar por encima del botón */
 }

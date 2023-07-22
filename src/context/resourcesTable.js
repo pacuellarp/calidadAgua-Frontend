@@ -1,6 +1,8 @@
 import './recourcesTable.css'
 import { useSelector } from 'react-redux';
 import React, { useState, useEffect } from 'react';
+import ReactHTMLTableToExcel from 'react-html-table-to-excel';
+
 
 function ContextTable() {
 
@@ -70,7 +72,17 @@ function ContextTable() {
   //console.log(resources);
   return (
     <div className="containerRecourcesTable">
-      <table>
+      <div>
+        <ReactHTMLTableToExcel
+          id="btn-download-xls"
+          className="excel-download-btn"
+          table="table-to-xls"
+          filename="resources_table"
+          sheet="sheet1"
+          buttonText="Descarga la tabla para Excel"
+        />
+      </div>
+      <table id="table-to-xls">
         <thead>
           <tr>
             <th scope="col">Fecha</th>

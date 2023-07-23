@@ -57,7 +57,7 @@ function Discovery() {
                 <br></br>
                 <br></br>
             </div>
-        </div>
+            </div>
     </>
   );
 }

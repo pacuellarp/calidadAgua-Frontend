@@ -4,7 +4,7 @@ import NavbarMobile from '../navbar/navbarMobile';
 
 function Header() {
   const { width } = useWindowSize();
-  const breakpointWidth = 768;
+  const breakpointWidth = 750;
   return <>{width >= breakpointWidth ? <NavbarDesktop /> : <NavbarMobile />}</>;
 }
 

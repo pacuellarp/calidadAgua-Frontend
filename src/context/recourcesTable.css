@@ -1,11 +1,11 @@
 table{
     border-collapse: collapse;
     margin: 25px 0;
-    font-size: 0.9em;
+    font-size: 0.5rem;
     font-family: sans-serif;
-    min-width: 400px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
+  
 
 table thead tr{
     background-color: #0B597D;
@@ -14,7 +14,7 @@ table thead tr{
 
 table tr, table th, table tr td{
     text-align: center;
-    padding: 12px 15px;
+    padding: 6px 7px;
 }
 
 table tbody tr td {
@@ -46,4 +46,23 @@ table tbody tr td:nth-of-type(even) {
   
 .excel-download-btn:hover {
 background-color: #006400; /* Color verde oscuro al pasar por encima del botón */
+}
+
+
+@media (min-width: 420px){
+    table{
+        font-size: 0.7rem;
+    }
+}
+
+@media (min-width: 530px){
+    table tr, table th, table tr td{
+        padding: 12px 15px;
+    }
+}
+
+@media (min-width: 720px){
+    table{
+        font-size: 0.9em;
+    }
 }

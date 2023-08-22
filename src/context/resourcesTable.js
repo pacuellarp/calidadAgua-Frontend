@@ -1,4 +1,5 @@
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { deleteValues } from '../redux/Ducks/tableDuck';
 import React, { useState, useEffect } from 'react';
 import ReactHTMLTableToExcel from 'react-html-table-to-excel';
 import './recourcesTable.css'
@@ -8,6 +9,8 @@ function ContextTable() {
 
  
   const dataResources = useSelector(state => state.tables.table);
+  const dispatch = useDispatch();
+  
   const [data, setData] = useState(dataResources);
 
   useEffect(() => {
@@ -18,7 +21,11 @@ function ContextTable() {
   }*/
   setInterval(() => {
     window.location.reload()}, 420000);
+  
 
+
+
+    
 
   var ph = []
   dataResources?.map((fuente) => {
@@ -44,16 +51,62 @@ function ContextTable() {
           hora.push(element)
       }
     });
-  var nombre
+  var nombre =[]
   dataResources?.map((fuente) => {
-    nombre = fuente.name
+    let i=0;
+    while (fuente.valoracion.pH[i]){
+      nombre.push(fuente.name)
+      i++;
+    }
+    //nombre = fuente.name
   });
   var nivel = []
   dataResources?.map((fuente) => {
       for (const element of fuente.valoracion.depth){
         nivel.push(element)
       }
-      });
+  });
+  var tamaño =[]
+  dataResources?.map((fuente) => {
+    let i=fuente.valoracion.pH.length;
+    if(tamaño.length==0){
+      tamaño.push(i)
+    }else{
+      tamaño.push(i+tamaño[tamaño.length-1])
+    }
+  });
+
+
+  
+
+  const handleDeleteConfirmation = (name,index) => {
+    const confirmation = window.confirm('¿Estás seguro/a de borrar este registro?');
+    if (confirmation) {
+
+      //Index correction
+      if(tamaño.length!=1){
+        for(let i=1;i<tamaño.length;i++){
+          if(tamaño[i-1]<=index && index<tamaño[i]){
+            index = index-tamaño[i-1];
+          }
+        }
+      }
+
+      // User confirmed, proceed with deletion
+      handleDeleteValues(name,index);
+
+    }
+  };
+
+  const handleDeleteValues = async (name, index) => {
+    try {
+      await dispatch(deleteValues(name, index));
+    } catch (error) {
+      // Manejar el error si es necesario
+    }
+  };
+
+
  /* let resources;
   resources = dataResources; */
 
@@ -94,21 +147,33 @@ function ContextTable() {
             <th scope="col">Temperatura</th>
             <th scope="col">Conductividad</th>
             <th scope="col">Nivel</th>
+            <th scope="col">Acciones</th>
           </tr>
         </thead>
         <tbody>
-          {hora
+          {Array.isArray(dataResources) ? (
+            hora
             ?.map((value, index) => (
               <tr key={index}>
                 <td>{value}</td>
-                <td>{nombre}</td>
+                <td>{nombre[index]}</td>
                 <td>{ph[index]}</td>
                 <td>{temper[index]}</td>
                 <td>{conduct[index]}</td>
                 <td>{nivel[index]}</td>
+                <td>
+                  <button onClick={() => handleDeleteConfirmation(nombre[index],index)} className="btn btn-danger">
+                    Eliminar
+                  </button>
+                </td>
               </tr>
             ))
-            .reverse()}
+            .reverse()          
+            ) : (
+              <tr>
+                <td colSpan="7">No data available</td>
+              </tr>
+            )}
         </tbody>
       </table>
     </div>

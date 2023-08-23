@@ -24,7 +24,6 @@ function ContextTable() {
   
 
 
-
     
 
   var ph = []
@@ -51,6 +50,15 @@ function ContextTable() {
           hora.push(element)
       }
     });
+  var nivel = []
+  dataResources?.map((fuente) => {
+      for (const element of fuente.valoracion.depth){
+        nivel.push(element)
+      }
+  });
+
+
+
   var nombre =[]
   dataResources?.map((fuente) => {
     let i=0;
@@ -60,12 +68,7 @@ function ContextTable() {
     }
     //nombre = fuente.name
   });
-  var nivel = []
-  dataResources?.map((fuente) => {
-      for (const element of fuente.valoracion.depth){
-        nivel.push(element)
-      }
-  });
+
   var tamaño =[]
   dataResources?.map((fuente) => {
     let i=fuente.valoracion.pH.length;

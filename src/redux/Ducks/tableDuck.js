@@ -1,6 +1,7 @@
 import tableService from "../../services/tableService";
 import api from '../../api/api'
 
+
 const data = [
 
 ]
@@ -84,12 +85,57 @@ export const deleteResource = (resourceId) => async (dispatch, getState) => {
   }
 }
 
-export const deleteValues = (name, index) => async dispatch => {
+export const deleteValues = (name, index) => async (dispatch, getState) => {
   try {
-    const response = await api.delete(`/waterresources/${name}/deleteValue/${index}`);
+    await api.delete(`/waterresources/${name}/deleteValue/${index}`);
+
+    const currentState = getState().tables.table;
+
+    // Create a new array with the updated values
+    const updatedResources = currentState.map(resource => {
+      if (resource.name === name) {
+        // Clone the resource and update the value array for pH
+        const updatedpH = [...resource.valoracion.pH];
+        updatedpH.splice(index, 1);
+
+        // Clone the resource and update the value array for temperature
+        const updatedTemperature = [...resource.valoracion.temperature]; 
+        updatedTemperature.splice(index, 1); 
+
+        // Clone the resource and update the value array for conductivity
+        const updatedConductivity = [...resource.valoracion.conductivity]; 
+        updatedConductivity.splice(index, 1); 
+
+        // Clone the resource and update the value array for depth
+        const updatedDepth = [...resource.valoracion.depth]; 
+        updatedDepth.splice(index, 1); 
+
+        // Clone the resource and update the value array for date
+        const updatedDate = [...resource.date]; 
+        updatedDate.splice(index, 1); 
+
+        // Clone the resource and update the valoracion object
+        const updatedResource = {
+          ...resource,
+          date: updatedDate,
+          valoracion: {
+            ...resource.valoracion,
+            pH: updatedpH,
+            temperature: updatedTemperature,
+            conductivity: updatedConductivity,
+            depth: updatedDepth,
+          }
+        };
+
+        return updatedResource;
+      }
+      return resource; // Return unchanged resources
+    });
+
+
     dispatch({ 
       type: DELETE_VALUES, 
-      payload: response.data
+      payload: updatedResources
     });
   } catch (error) {
     throw error;
